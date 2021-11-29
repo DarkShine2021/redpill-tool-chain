@@ -16,10 +16,11 @@ jobs:
     - uses: actions/checkout@v2
     - name: Chmod
       run: chmod 0755 ./redpill_tool_chain.sh
-    - name: 准备构建环境       
-    run: redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt3sas/rpext-index.json
-    - name: Build the Docker image
+      - name: Build the Docker image
     run: ./redpill_tool_chain.sh build apollolake-7.0.1-42218
+     - name: Chmos
+    run:./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/vmxnet3/rpext-index.json
+    run:./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
     - name: Create dsm image
     run: ./redpill_tool_chain.sh auto apollolake-7.0.1-42218
     - uses: actions/upload-artifact@v2
