@@ -34,9 +34,7 @@ jobs:
       - name: add driver3
         run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt3sas/rpext-index.json
         
-      - name: add driver4
-        run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt2sas/rpext-index.json
-        
+              
         
         
       - name: Build docker image
