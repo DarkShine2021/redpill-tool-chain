@@ -31,6 +31,14 @@ jobs:
       - name: add driver2
         run: ./redpill_tool_chain.sh add https://github.com/jumkey/redpill-load/raw/develop/redpill-acpid/rpext-index.json
         
+      - name: add driver3
+        run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt3sas/rpext-index.json
+        
+      - name: add driver4
+        run: ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mpt2sas/rpext-index.json
+        
+        
+        
       - name: Build docker image
         run: ./redpill_tool_chain.sh build apollolake-7.0.1-42218
 
@@ -39,5 +47,5 @@ jobs:
 
       - uses: actions/upload-artifact@v2
         with:
-          name: dsm918
+          name: dsm918withlsi
           path: ./images
